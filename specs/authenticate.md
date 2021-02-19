@@ -1,4 +1,4 @@
-## Autorisatie
+## Authenticatie
 
 Door middel van autorisatie kan een aanbieder de gevalideerde vragen van een afnemer autoriseren. Het is een aanvullende maatregel om afnemers te accepteren als betrouwbare organisatie. Als een afnemer niet langer vertrouwt is, dan kan een aanbieder de autorisatie intrekken en daarmee de toegang tot het stellen van gevalideerde vragen ontnemen.
 

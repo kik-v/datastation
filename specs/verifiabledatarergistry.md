@@ -1,4 +1,4 @@
-# Verifieerbaar dataregister
+## Verifieerbaar dataregister
 
 Het verifieerbare register \(Engels: verifiable data registry\) is de verzamelnaam voor een component met een aantal generieke functies. Hieronder zijn deze generieke functies benoemd en de manier waarop ze zijn ingevuld:
 

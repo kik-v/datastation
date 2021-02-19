@@ -1,16 +1,16 @@
-# Datacatalogus
+## Datacatalogus
 
 Voor een datastation moet beschreven zijn welke datasets beschikbaar zijn. De dataset worden daarom beschreven in metadata. De metadata moet overeenkomstig de FAIR-data principes doorzoekbaar zijn en vindbaar. Voor het beschrijven van de metadata wordt gebruik gemaakt van de DCAT als ontologie voor een datacatalogus.
 
 Dit document geeft een voorbeeld van de minimale set van metadata voor een datastation. Voor een beschrijving van de attributen verwijzen we naar [https://www.w3.org/TR/vocab-dcat-2/](https://www.w3.org/TR/vocab-dcat-2/).
 
-## De minimale beschrijving van de datasets
+### De minimale beschrijving van de datasets
 
 In onderstaand voorbeeld is een json-ld opgenomen van de metadata van een datastation. Dit voorbeeld kan als uitgangspunt worden genomen en gekopieerd worden naar een werkelijk datastation.
 
 In het voorbeeld is gebruik gemaakt van Turtle \([https://www.w3.org/TR/turtle/](https://www.w3.org/TR/turtle/)\) als format voor het beschrijven van de metadata.
 
-### Beschrijving van de namespaces
+#### Beschrijving van de namespaces
 
 De datacatalogus gebruikt de onderstaande namespaces voor het beschrijven van het datastation.
 
@@ -44,7 +44,7 @@ De datacatalogus is een catalogus van datasets. Voor ieder datastation moet een 
   dct:type <http://purl.org/adms/publishertype/NonProfitOrganisation> .
 ```
 
-### Beschrijving van de datasets
+#### Beschrijving van de datasets
 
 Iedere dataset in de datacatalogus is beschreven. Onderstaand voorbeeld bevat de minimale beschrijving van de dataset.
 
@@ -61,7 +61,7 @@ Iedere dataset in de datacatalogus is beschreven. Onderstaand voorbeeld bevat de
   dcat:distribution :dist-validatedquery .
 ```
 
-### Beschrijving van de distributie
+#### Beschrijving van de distributie
 
 Iedere distributie van de dataset is beschreven. Onderstaand voorbeeld bevat de minimale beschrijving van de datadistributie en de bijbehorende service voor gevalideerde vragen.
 
@@ -79,4 +79,6 @@ Iedere distributie van de dataset is beschreven. Onderstaand voorbeeld bevat de 
   dct:description "Service voor het uitvoeren van gevalideerde vragen via sparql"@nl ;
   dcat:endpointURL <http://data.example.com/api/validatedquery> .
 ```
+
+
 

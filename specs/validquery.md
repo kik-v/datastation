@@ -1,16 +1,16 @@
-# Kwaliteitsinformatie
+## Kwaliteitsinformatie
 
 Dit document beschrijft het technische scenario voor het elektronisch opvragen van gegevens over de kwaliteit van de verpleeghuiszorg in een zorginstelling. Het is een van de scenario's binnen de afsprakenset voor keteninformatie kwaliteit verpleeghuiszorg \(KIK-V\). Met technisch wordt gerefereerd naar de technische laag uit het Europese interoperabiliteitsraamwerk \(EIF\). In het Nictiz interoperabiliteitsraamwerk zijn dit de lagen applicatie en IT-Infrastructuur.
 
 De indicatoren voor het meten van de kwaliteit zijn vastgelegd in het kwaliteitskader verpleeghuiszorg. Het kwaliteitskader is opgesteld door de Kwaliteitsraad van het Zorginstituut Nederland en is daarna vastgesteld door de Raad van Bestuur van het Zorginstituut op 12 januari 2017.
 
-## Gevalideerde vraag en antwoord
+### Gevalideerde vraag en antwoord
 
 Een gevalideerde vraag is een vraag die gespecificeerd is in een uitwisselprofiel. De vragen zijn gevalideerd op rechtmatigheid, doelbinding en proportionaliteit voor de afnemer en aanbieder. Deze validatie wordt uitgevoerd onder de eindverantwoordelijkheid van een onafhankelijke beheerorganisatie. Voor een aanbieder is het verifieerbaar dat de vraag gevalideerd en geldig is.
 
 De vraag om gegevens wordt gesteld vanuit een organisatie in de rol van afnemer. Deze rol kan bijvoorbeeld ingevuld worden door de Inspectie Gezondheidszorg en Jeugd \(IGJ\), Nederlandse Zorgautoriteit \(NZa\), Zorginstituut Nederland \(ZIN\), zoprgkantoren etc.
 
-### **Randvoorwaarden**
+#### **Randvoorwaarden**
 
 Voordat het scenario kan starten moet aan de onderstaande voorwaarden zijn voldaan.
 
@@ -18,7 +18,7 @@ Voordat het scenario kan starten moet aan de onderstaande voorwaarden zijn volda
 * Voor een datastation moet een [datacatalogus](datacatalogus.md) zijn gepubliceerd. De datacatalogus moet door een searchable resource geindexeerd kunnen worden voor de vindbaarheid van de data en de dataservices van de aanbieder.
 * Het datastation moet een SPARQL-endpoint bevatten voor de uitvoering van de gevalideerde vraag.
 
-### **Stappen in het scenario**
+#### **Stappen in het scenario**
 
 Het scenario start als het datatstation een bericht met een gevalideerde vraag \(hierna genoemd: vraag\) ontvangt van een consumer. De autorisatie is meegezonden met het bericht. Het bericht met de vraag en het antwoord van het datastation noemen we gezamenlijk de conversatie.
 
@@ -31,19 +31,19 @@ Het scenario start als het datatstation een bericht met een gevalideerde vraag \
 
 Einde scenario.
 
-### Alternatief scenario
+#### Alternatief scenario
 
 Bij 2: de consumer is niet geautoriseerd voor het stellen van een vraag. Het datastation antwoord met de melding: HTTP/1.1 403 Forbidden.
 
 Bij 3, de consumer heeft geen geldige gevalideerde vraag gepresenteerd. Het datastation antwoord met  een foutrapport waarin de melding is opgenomen dat of wel de presentatie dan wel de gevalideerde vraag niet geldig is.
 
-### **Aanvullende eisen**
+#### **Aanvullende eisen**
 
 Het kanaal voor het transport van de berichten moet versleuteld zijn waarbij wederzijdse authenticatie is toegepast \(mTLS\).
 
-## Realisatie van het scenario
+### Realisatie van het scenario
 
-### **Overzicht van de oplossing**
+#### **Overzicht van de oplossing**
 
 De gehanteerde softwarearchitectuur in onderstaand figuur is illustratief en geen eis.
 
@@ -53,9 +53,9 @@ De specificatie van de berichten is geinspireerd op [https://identity.foundation
 
 In onderstaande specificatie zijn de berichten beschreven.
 
-### **Gevalideerde vraag \(inkomend bericht\)**
+#### **Gevalideerde vraag \(inkomend bericht\)**
 
-#### **Envelop**
+##### **Envelop**
 
 De vraag MOET verstuurd zijn in een envelop. De envelop is op de infrastructuurlaag een component waarmee berichtversleuteling kan worden toegepast voor het transport tussen software agents. De envelop geeft eveneens de mogelijkheid om tussenstations te gebruiken voor het routeren van berichten. het gebruik van een envelop voor messaging is een 'best practice', zie [https://www.enterpriseintegrationpatterns.com/patterns/messaging/EnvelopeWrapper.html](https://www.enterpriseintegrationpatterns.com/patterns/messaging/EnvelopeWrapper.html).
 
@@ -88,7 +88,7 @@ De envelop MOET als volgt zijn vormgegeven:
 
 De claims jti, exp, iat MOETEN ingevuld zijn zoals beschreven in IETF RFC 7519 \(zie [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)\).
 
-#### **Verifiable presentation**
+##### **Verifiable presentation**
 
 De presentatie MOET een geldige verifiable presentation \(hierna prersentatie\) zijn zoals beschreven in [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/). Het doel van de presentation is om de gevalideerde vraag te presenteren aan het datastation van een aanbieder waarbij de traceerbaarheid en integriteit van de presentatie gegarandeerd is.
 
@@ -120,7 +120,7 @@ De presentatie MOET als algortime 'EdDSA' hanteren. Indien andere algoritmes geb
 "signature": "<signature of the holder>"
 ```
 
-#### **Verklaring gevalideerde vraag**
+##### **Verklaring gevalideerde vraag**
 
 De verklaring MOET een geldige verifiable credential \(hierna credential\) zijn zoals beschreven in [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/). Met de verklaring bewijst de afnemer dat de vraag een valide vraag is.
 
@@ -160,7 +160,7 @@ De verklaring MOET een attribuut query bevatten die een geldige SPARQL-query als
 "signature":
 ```
 
-#### **Status van de verklaring gevalideerde vraag**
+##### **Status van de verklaring gevalideerde vraag**
 
 In de verklaring MAG een attribuut opgenomen zijn met de verwijzing naar de status van de verklaring.
 
@@ -175,9 +175,9 @@ De wijze waarop het attribuut is opgenomen MOET voldoen aan de het verifiable cr
 
 Het gehanteerde type is beschreven in: [https://w3c-ccg.github.io/vc-csl2017/](https://w3c-ccg.github.io/vc-csl2017/).
 
-### **Antwoord op gevalideerde vraag \(uitgaand bericht\)**
+#### **Antwoord op gevalideerde vraag \(uitgaand bericht\)**
 
-#### **Envelop**
+##### **Envelop**
 
 Het antwoord MOET verzonden zijn in een envelop.
 
@@ -209,7 +209,7 @@ De envelop MOET als volgt zijn vormgegeven:
 
 De claims jti, exp, iat MOETEN ingevuld zijn zoals beschreven in IETF RFC 7519 \(zie [https://tools.ietf.org/html/rfc7519](https://tools.ietf.org/html/rfc7519)\).
 
-#### **Resultaatset**
+##### **Resultaatset**
 
 De resultaat set MOET een key-value array zijn bestaande uit de identificatie van de verklaring en de het resultaat van de query \(zie hieronder\).
 
@@ -222,7 +222,7 @@ De resultaat set MOET een key-value array zijn bestaande uit de identificatie va
 ]
 ```
 
-### **Foutrapport \(uitgaand bericht\)**
+#### **Foutrapport \(uitgaand bericht\)**
 
 De foutrapportage MOET verzonden zijn in een envelop.
 

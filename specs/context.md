@@ -1,6 +1,6 @@
-# Inleiding
+## Inleiding
 
-## Grondplaat
+### Grondplaat
 
 De grondplaat beschrijft de kern van de oplossing zoals deze wordt afgesproken en ontwikkeld voor keteninformatie kwaliteit verpleeghuiszorg \(KIK-V\). De actuele versie van de afspraken kan worden opgevraagd bij Zorginstituut Nederland. Zie ook [https://www.kik-v.nl](https://www.kik-v.nl/) voor meer informatie.
 
@@ -18,7 +18,7 @@ De afsprakenset kent verantwoordelijkheden die worden gekoppeld aan de rollen va
 * **Aanbieder** \(van gegevens\): dit zijn de instellingen voor verpleeghuiszorg;
 * **Beheerorganisatie**: dit betreft zowel de besluitvorming als de uitvoering.
 
-### Toepassing van de afspraken in dit scenario
+#### Toepassing van de afspraken in dit scenario
 
 ![](diagrams/kikv-toepassingafspraken.png)
 
@@ -31,7 +31,7 @@ De afsprakenset kent verantwoordelijkheden die worden gekoppeld aan de rollen va
   * Het beantwoorden van de vraag, waarbij hij gebruik maakt van zijn aanbiedergegevensset KIK-V: een verzameling gegevens over de eigen organisatie die voldoen aan de modelgegevensset KIK-V.
 * De afnemer mag ervan uit gaan dat de aanbieder over een aanbiedergegevensset KIK-V beschikt, die voldoet aan de modelgegevensset KIK-V. Of en hoe de aanbieder dit feitelijk implementeert, wordt niet voorgeschreven.
 
-## Componenten in het netwerk
+### Componenten in het netwerk
 
 In onderstaande figuur zijn de componenten benoemd die in een ecosysteem \(het netwerk van actoren die zich committeren aan een set van afspraken\) kunnen zijn opgenomen. Op de componenen zijn de rollen geplaatst, zoals deze in DIZRA zijn gespecificeerd, die de eindverantwoordelijkheid dragen voor de verwerkingen in het component. De netwerkautoriteit ziet toe op naleving van de afspraken in het ecosysteem. Een auditor ondersteunt hierbij door audits uit te voeren en een derdenverklaring uit te geven waarmee een netwerkactor, een netwerkgids of een netwerkbeheerder kan bewijzen dat zij aan de afspraken voldoet. Voor meer informatie, zie [https://dizra.gitbook.io/dizra/](https://dizra.gitbook.io/dizra/).
 
