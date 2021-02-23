@@ -6,7 +6,7 @@ In onderstaande figuur zijn de lagen en onderwerpen benoemd voor een datastation
 - **Data bij de bron**, om data en services meervoudig te kunnen gebruiken vanuit een netwerkperspectief;
 - **FAIR data**, door de data en services 
   - vindbaar te maken door het aanbieden van metadata in de vorm van een datacatalogus,  
-  - toegankelijk te maken via een protocol met authenicatie en autorisatie, 
+  - toegankelijk te maken via een protocol met authenticatie en autorisatie, 
   - interoperabel te maken door de gehanteerde ontologie en 
   - herbruikbaar door de samenwerkingsafspraken.
 - **Machineleesbaar**, door machineleesbare data op basis van een machineleesbare ontologie aan te bieden
@@ -16,7 +16,7 @@ Voor meer informatie over de architectuurprincipes, zie [https://dizra.gitbook.i
 
 <img src="diagrams/Overview.svg" alt="Architectuuroverzicht van een datastation" style="zoom:80%;" />
 
-Dit document is de eerste beschrijving van een datastation. Alle onderwerpen uit alle lagen zijn daarom in dit document beschreven. De verwachting is dat in de toekomst een splising noodzakelijk is naar een samenhangend kerndocument en documenten per onderwerp, naar mate het aantal onderwerpen (zoals het aantal services) zal toenemen.
+Dit document is de eerste beschrijving van een datastation. Alle onderwerpen uit alle lagen zijn daarom in dit document beschreven. De verwachting is dat in de toekomst een splitsing noodzakelijk is naar een samenhangend kerndocument en documenten per onderwerp, naar mate het aantal onderwerpen (zoals het aantal services) zal toenemen.
 
 Wat beschrijft iedere laag?
 

@@ -4,12 +4,12 @@
 
 Het verkrijgen van kwaliteitsinformatie wordt uitgevoerd door het stellen van een gevalideerde vraag (hierna vraag genoemd). Deze vraag is gespecificeerd in een uitwisselprofiel. De vragen zijn gevalideerd op rechtmatigheid, doelbinding en proportionaliteit voor de afnemer en aanbieder. De validatie wordt door een onafhankelijke beheerorganisatie. Voor een aanbieder is het verifieerbaar dat de vraag gevalideerd en geldig is.
 
-De vraag om gegevens wordt gesteld vanuit een organisatie in de rol van afnemer. Deze rol kan bijvoorbeeld ingevuld worden door de Inspectie Gezondheidszorg en Jeugd \(IGJ\), Nederlandse Zorgautoriteit \(NZa\), Zorginstituut Nederland \(ZIN\), zoprgkantoren etc.
+De vraag om gegevens wordt gesteld vanuit een organisatie in de rol van afnemer. Deze rol kan bijvoorbeeld ingevuld worden door de Inspectie Gezondheidszorg en Jeugd \(IGJ\), Nederlandse Zorgautoriteit \(NZa\), Zorginstituut Nederland \(ZIN\), zorgkantoren etc.
 
 | Stappen in het hoofdscenario                                 |
 | ------------------------------------------------------------ |
 | 1. De afnemer presenteert een vraag.            |
-| 2. Het datatstation neemt de vraag in ontvangst. |
+| 2. Het datastation neemt de vraag in ontvangst. |
 | 3. Het datastation logt de ontvangst.                        |
 | 4. Het datastation verifieert dat de afnemer is geautoriseerd. |
 | 5. Het datastation verifieert dat de presentatie geldig is.  |
@@ -49,7 +49,7 @@ De presentatie moet elektronisch ondertekend zijn door de afnemer \(organisatien
 
 De presentatie moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
 
-De presentatie moet als algortime 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
+De presentatie moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
 
 <pre class='example nohighlight'>
 "protected": {
@@ -81,7 +81,7 @@ De vraag moet elektronisch ondertekend zijn door de beheerorganisatie \(organisa
 
 De vraag moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan MOET dat in de metadata vana het datastation vermeld zijn.
 
-De vraag moet als algortime 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan MOET dat in de metadata van het datastation vermeld zijn.
+De vraag moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan MOET dat in de metadata van het datastation vermeld zijn.
 
 De vraag moet een attribuut profile bevatten die een verwijzing naar het uitwisselprofiel bevat. De verwijzing is bij voorkeur een linked data verwijzing naar de specificatie van het uitwisselprofiel.
 

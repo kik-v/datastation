@@ -10,8 +10,8 @@ In de vertrouwensinfrastructuur worden de volgende onderdelen gepubliceerd:
 
 - **Publicatie van DID Documents** zoals bedoeld in [https://www.w3.org/TR/did-core/](https://www.w3.org/TR/did-core/).
 - **Publicatie van de lijst met vertrouwde uitgevers van verklaringen** \(issuer trust list\). Vooralsnog zal deze lijst handmatig worden gepubliceerd.
-- **Publicatie van het schema met attributen in de verklaring**. Dit is voorralsnog niet geïmplementeerd.
-- **Publicatie van de status van een verklaring** waarbij voorralsnog wordt aangenomen dat de uitgever de lijst zelf publiceert. Dit overeenkomstig het verifiable credential data model \([https://www.w3.org/TR/vc-data-model/\#status](https://www.w3.org/TR/vc-data-model/#status)\).
+- **Publicatie van het schema met attributen in de verklaring**. Dit is vooralsnog niet geïmplementeerd.
+- **Publicatie van de status van een verklaring** waarbij vooralsnog wordt aangenomen dat de uitgever de lijst zelf publiceert. Dit overeenkomstig het verifiable credential data model \([https://www.w3.org/TR/vc-data-model/\#status](https://www.w3.org/TR/vc-data-model/#status)\).
 
 Een datastation moet gebruik kunnen maken van de vertrouwensinfrastructuur om afnemers en andere actoren in het ecosysteem te kunnen authenticeren en verklaringen te kunnen verifiëren. Een datastation moet daarom de rol van verifeerder (Engels: verifyer) kunnen uitvoeren overeenkomstig de volgende specificatie: [https://www.w3.org/TR/vc-use-cases/](https://www.w3.org/TR/vc-use-cases/) 
 
@@ -20,13 +20,13 @@ Een datastation moet decentrale identificaties (DIDs) van actoren ondersteunen o
 - De specificatie van JSON Web Keys (JWK) als key format (verification method type is gelijk aan JsonWebKey2020). Zie ook: https://www.w3.org/TR/did-spec-registries/.
 - Private en publieke sleutels van het type OKP met het algoritme EdDSA.
 
-Een datastation moet haar eigen decentrale identifaties (DIDs) en private sleutels veilig opslaan.
+Een datastation moet haar eigen decentrale identificaties (DIDs) en private sleutels veilig opslaan.
 
 Een datastation moet minimaal de Nuts methode \(did:nuts, zie @@TODO: referentie opnemen naar specificatie\) ondersteunen als DID methode. 
 
 ### Activiteiten Log 
 
-Het datastation moet alle aciviteiten loggen met het nummer dat de afnemer heeft gegeven aan de conversatie. Met de log moet een aanbieder de behandeling van een vraag kunnen verantwoorden. 
+Het datastation moet alle activiteiten loggen met het nummer dat de afnemer heeft gegeven aan de conversatie. Met de log moet een aanbieder de behandeling van een vraag kunnen verantwoorden. 
 
 Voor iedere activiteit moet de thread_id (het conversatienummer) geregistreerd zijn, de datum en tijd van de activiteit, een omschrijving van de activiteit en de inhoud van het bericht (request of response).
 

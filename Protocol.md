@@ -24,7 +24,7 @@ Een datastation kan verschillende vormen van communicatie ondersteunen. Keteninf
 
 #### Messages
 
-De specificatie voor asynchrone communicatie is geinspireerd op [https://identity.foundation/didcomm-messaging/spec/](https://identity.foundation/didcomm-messaging/spec/).
+De specificatie voor asynchrone communicatie is geïnspireerd op [https://identity.foundation/didcomm-messaging/spec/](https://identity.foundation/didcomm-messaging/spec/).
 
 Messages moeten verstuurd zijn in een envelop. De envelop is op de infrastructuurlaag een component waarmee berichtversleuteling kan worden toegepast voor het transport tussen software agents. Vooralsnog zal hiervoor echter mTLS worden toegepast omdat dit meer vertrouwen geeft bij de organisaties in de rol van verzender en ontvanger. Het is bestaande technologie die deze organisaties al gebruiken, kennen en herkennen. 
 
@@ -54,8 +54,8 @@ De envelop voor het foutrapport is identiek aan de envelop voor de request met u
    "to": "did van de geadresseerde",
    "exp": "expiratie datum (optioneel)",
    "iat":"datum van aanmaak (optioneel)",
-   "thread_id": "identifier om de JWM te associeren aan de conversatie",
-   "reply_url": "url waar de response naarr toe kan worden verzonden",
+   "thread_id": "identifier om de JWM te associëren aan de conversatie",
+   "reply_url": "url waar de response naar toe kan worden verzonden",
    "body": {
        "message": "base64url-encoded JWT string met de inhoud van het bericht"
   }
