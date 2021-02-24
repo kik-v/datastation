@@ -14,7 +14,7 @@ In onderstaande figuur zijn de lagen en onderwerpen benoemd voor een datastation
 
 Voor meer informatie over de architectuurprincipes, zie [https://dizra.gitbook.io/dizra/](https://dizra.gitbook.io/dizra/)). In dit document is voor het datastation iedere laag beschreven en waar nodig zijn referenties opgenomen naar andere standaarden.
 
-<img src="diagrams/Overview.svg" alt="Architectuuroverzicht van een datastation" style="zoom:80%;" />
+<img src="diagrams/Overview.svg" alt="Architectuuroverzicht van een datastation" style="zoom:90%;" />
 
 Dit document is de eerste beschrijving van een datastation. Alle onderwerpen uit alle lagen zijn daarom in dit document beschreven. De verwachting is dat in de toekomst een splitsing noodzakelijk is naar een samenhangend kerndocument en documenten per onderwerp, naar mate het aantal onderwerpen (zoals het aantal services) zal toenemen.
 
@@ -23,6 +23,7 @@ Wat beschrijft iedere laag?
 - De **protocollen** beschrijven de toegang tot de data en services. Uitgangspunt is dat gebruik wordt gemaakt van webstandaarden zoals REST en GraphQL. Naast synchrone toegang biedt het datastation ook asynchrone toegang via messaging.  
 
 - De **services** zijn specifieke services gebaseerd op use cases in het ecosysteem van het Informatiestelsel Zorg. 
+- In de **resources** zijn de resource shapes opgenomen evenals de constraints die op de shapes van toepassing zijn. 
 - De **kennis** van een aanbieder wordt weergegeven, en is bevraagbaar, op basis van een ontologie.
 - De kennis van een aanbieder is opgenomen in de achterliggende informatiesystemen van een aanbieder. De **integratielaag** beschrijft de koppeling tussen de data in deze informatiesystemen en de kennisweergave.
 - Een datastation is onderdeel van het ecosysteem Informatiestelsel Zorg. Voor het ecosysteem zijn generieke standaarden van toepassing die in de **platformlaag** zijn opgenomen.

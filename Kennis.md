@@ -13,6 +13,8 @@ Een datastation moet minimaal versie 1.1 van het Resource Description Framework 
 
 Een datastation moet de vastgelegde kennis beschrijven in een ontologie. De ontologie moet beschreven zijn in W3C Web Ontology Language (OWL), zie [https://www.w3.org/TR/owl-features/](https://www.w3.org/TR/owl-features/).
 
+Een datastation voor een zorginstelling met verpleeghuiszorg moet de ontologie voor verpleeghuiszorg hanteren en de ontologie voor kwaliteitsinformatie.
+
 ### SPARQL
 
 Een datastation moet SPARQL kunnen uitvoeren zodat de vastgelegde kennis bevraagd kan worden. Het datastation moet minimaal versie 1.1 van de SPARQL specificatie ondersteunen, zie [https://www.w3.org/TR/sparql11-query/](https://www.w3.org/TR/sparql11-query/).
