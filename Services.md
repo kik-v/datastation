@@ -47,10 +47,6 @@ De presentatie moet een geldige verifiable presentation \(hierna prersentatie\) 
 
 De presentatie moet elektronisch ondertekend zijn door de afnemer \(organisatieniveau\).
 
-De presentatie moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
-
-De presentatie moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
-
 <pre class='example nohighlight'>
 "protected": {
    "alg": "EdDSA", 
@@ -78,10 +74,6 @@ De presentatie moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes geb
 De vraag moet een geldige verifiable credential \(hierna credential\) zijn zoals beschreven in [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/). Met de verklaring bewijst de afnemer dat de vraag een valide vraag is.
 
 De vraag moet elektronisch ondertekend zijn door de beheerorganisatie \(organisatieniveau\).
-
-De vraag moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan MOET dat in de metadata vana het datastation vermeld zijn.
-
-De vraag moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan MOET dat in de metadata van het datastation vermeld zijn.
 
 De vraag moet een attribuut profile bevatten die een verwijzing naar het uitwisselprofiel bevat. De verwijzing is bij voorkeur een linked data verwijzing naar de specificatie van het uitwisselprofiel.
 

@@ -13,7 +13,9 @@ In de vertrouwensinfrastructuur worden de volgende onderdelen gepubliceerd:
 - **Publicatie van het schema met attributen in de verklaring**. Dit is vooralsnog niet geïmplementeerd.
 - **Publicatie van de status van een verklaring** waarbij vooralsnog wordt aangenomen dat de uitgever de lijst zelf publiceert. Dit overeenkomstig het verifiable credential data model \([https://www.w3.org/TR/vc-data-model/\#status](https://www.w3.org/TR/vc-data-model/#status)\).
 
-Een datastation moet gebruik kunnen maken van de vertrouwensinfrastructuur om afnemers en andere actoren in het ecosysteem te kunnen authenticeren en verklaringen te kunnen verifiëren. Een datastation moet daarom de rol van verifeerder (Engels: verifyer) kunnen uitvoeren overeenkomstig de volgende specificatie: [https://www.w3.org/TR/vc-use-cases/](https://www.w3.org/TR/vc-use-cases/) 
+Een datastation moet gebruik kunnen maken van de vertrouwensinfrastructuur om afnemers en andere actoren in het ecosysteem te kunnen authenticeren en verklaringen te kunnen verifiëren. Een datastation moet daarom de rol van verificateur (Engels: verifyer) kunnen uitvoeren overeenkomstig de volgende specificatie: [https://www.w3.org/TR/vc-use-cases/](https://www.w3.org/TR/vc-use-cases/) 
+
+Een datastation moet verifiable credentials ondersteunen overeenkomstig de volgende specificatie: [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/). Binnen deze specificatie moet een datastation minimaal het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\) voor zowel verifiable credentials als verifiable presentations.
 
 Een datastation moet decentrale identificaties (DIDs) van actoren ondersteunen overeenkomstig de volgende specificatie: [https://www.w3.org/TR/did-core/](https://www.w3.org/TR/did-core/). Binnen deze specificatie moet een datastation minimaal ondersteuning geven aan:
 
