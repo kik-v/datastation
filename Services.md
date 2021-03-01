@@ -24,20 +24,40 @@ De vraag om gegevens wordt gesteld vanuit een organisatie in de rol van afnemer.
 | 5a. als de presentatie niet geldig is. Het datastation stelt een foutrapport samen en vervolgt bij 8. |
 | 6a. als de vraag niet geldig is. Het datastation stelt een foutrapport samen en vervolgt bij 8. |
 
+#### Realisatie van het scenario
+
+In het onderstaande sequencediagram is het hoofdscenario weergegeven naar de verschillende architectuurlagen. Met de lagen wordt aangegeven op welke laag de specificatie is beschreven. De lagen zijn niet normatief voor de architectuur van het datastation.
+
+<img src="diagrams/Sequencediagram.svg" alt="Sequencediagram van de stappen." style="zoom:70%;" />
+
 In de onderstaande paragrafen worden een aantal van de stappen verder gespecificeerd.
 
-#### Loggen
+##### Ontvangen presentatie van de vraag
+
+Het datastation moet de presentatie ontvangen als request overeenkomstig een ondersteund protocol. Voor kwaliteitsinformatie moet het messagingprotocol gehanteerd worden omdat hiermee de aanbieder de mogelijkheid wordt geboden handmatige processen voor vrijgave van de antwoorden te hanteren.
+
+<pre class='example'>
+POST /api/verifiedsparql HTTP/1.1
+Host: data.example.com
+Authorization: Bearer mF_9.B5f-4.1JqM
+
+{
+  Message (zie protocol)
+}
+</pre>
+
+##### Loggen
 
 Het datastation moet de vragen en anwoorden loggen in de activiteiten log. Hiermee moet een aanbieder de behandeling van de vraag kunnen verantwoorden. Voor meer informatie, zie het hoofdstuk [Activiteiten Log](#activiteiten-log).
 
-#### Autorisatie
+##### Verifiëren autorisatie
 
 Het datastation verifieert dat het Access Token geldig is. Het Access Token is door het datastation uitgegeven overeenkomstig het OAuth2 protocol.
 Als het token niet geldig is, dan antwoord het datastation met de melding: HTTP/1.1 403 Forbidden. Anders met HTTP/1.1 200 OK.
 
 Voor meer informatie, zie hoofdstuk [Autorisatie (OAuth2)](#autorisatie-oauth2).
 
-#### Presentatie
+##### Verifiëren presentatie
 
 Door middel van de verificatie van de presentatie kan de herkomst van de vraag getraceerd worden naar de afnemer. 
 
@@ -46,6 +66,10 @@ De identificatie van de afnemer moet geregistreerd zijn in de vertrouwensinfrast
 De presentatie moet een geldige verifiable presentation \(hierna prersentatie\) zijn zoals beschreven in [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/).
 
 De presentatie moet elektronisch ondertekend zijn door de afnemer \(organisatieniveau\).
+
+De presentatie moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
+
+De presentatie moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan moet dat in de datacatalogus van het datastation vermeld zijn.
 
 <pre class='example nohighlight'>
 "protected": {
@@ -69,11 +93,15 @@ De presentatie moet elektronisch ondertekend zijn door de afnemer \(organisatien
 "signature": "elektronische handtekening van de afnemer"
 </pre>
 
-#### Vraagbehandeling
+##### Verifiëren vraag
 
 De vraag moet een geldige verifiable credential \(hierna credential\) zijn zoals beschreven in [https://www.w3.org/TR/vc-data-model/](https://www.w3.org/TR/vc-data-model/). Met de verklaring bewijst de afnemer dat de vraag een valide vraag is.
 
 De vraag moet elektronisch ondertekend zijn door de beheerorganisatie \(organisatieniveau\).
+
+De vraag moet het formaat JSON Web Token als proof format gebruiken \(zie voorbeeld hieronder\). Indien Linked Data Proofs gebruikt kunnen worden, dan MOET dat in de metadata vana het datastation vermeld zijn.
+
+De vraag moet als algoritme 'EdDSA' hanteren. Indien andere algoritmes gebruikt kunnen worden, dan MOET dat in de metadata van het datastation vermeld zijn.
 
 De vraag moet een attribuut profile bevatten die een verwijzing naar het uitwisselprofiel bevat. De verwijzing is bij voorkeur een linked data verwijzing naar de specificatie van het uitwisselprofiel.
 
@@ -110,7 +138,7 @@ De vraag moet een attribuut query bevatten die een geldige SPARQL-query als waar
 "signature": "elektronische handtekening van de beheerorganisatie"
 </pre>
 
-#### Status van de vraag
+##### Verifiëren status van de vraag
 
 In de vraag mag een attribuut opgenomen zijn met de verwijzing naar de status van de vraag.
 
@@ -125,13 +153,13 @@ De wijze waarop het attribuut is opgenomen moet voldoen aan de het verifiable cr
 
 Het gehanteerde type is beschreven in: [https://w3c-ccg.github.io/vc-csl2017/](https://w3c-ccg.github.io/vc-csl2017/).
 
-#### Samenstellen antwoord
+##### Samenstellen antwoord
 
 Een geldige vraag moet door een afnemer in behandeling worden genomen. De aanbieder mag de vraag geautomatiseerd beantwoorden of een handmatig vrijgaveproces hanteren voor het beantwoorden van de vraag.
 
-Voor het samenstellen van het antwoord moet de vraag (de SPARQL) gesteld worden. De aanbieder beantwoord de vraag op basis van het kennismodel (de ontologie) en de kennis (de informatie) die zij geregistreerd heeft. 
+Voor het samenstellen van het antwoord moet de vraag (de SPARQL) gesteld worden. De aanbieder beantwoord de vraag op basis van het kennismodel (de ontologie) en de kennis (de informatie) die zij geregistreerd heeft. De aanbieder voert alle SPARQL-queries uit die in de presentatie is opgenomen.
 
-Het antwoord (van de SPARQL) moet opgenomen zijn in een key-value array bestaande uit de identificatie van de vraag en het resultaat van de query \(zie hieronder\).
+Het antwoord (van de SPARQL) moet opgenomen worden in een key-value array bestaande uit de identificatie van de vraag en het resultaat van de query \(zie hieronder\).
 
 <pre class='example nohighlight'>
 "resultset": [
@@ -141,3 +169,8 @@ Het antwoord (van de SPARQL) moet opgenomen zijn in een key-value array bestaand
     }
 ]
 </pre>
+
+##### Verzenden antwoord
+
+Het datastation moet het antwoord via hetzelfde protocol verzenden als de vraag ontvangen is.
+
